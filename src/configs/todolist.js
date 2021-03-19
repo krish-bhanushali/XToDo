@@ -1,4 +1,5 @@
 export const TODO_LIST_ADDRESS = '0xB5EcDDcfb28bDba7FC054FE179C207B523FBa93D';
+export const D_APP_PORTIS_ID = 'cc5fb1a3-72aa-4311-ab6b-c73c63239736';
 export const TODO_ABI = [
 	{
 		"inputs": [],

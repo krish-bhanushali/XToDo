@@ -2,9 +2,15 @@ import videoUrl from '../assets/backVideo1.mp4'
 import facebook from '../assets/facebook.png'
 import twitter from '../assets/twitter.png'
 import instagram from '../assets/instagram.png'
-import {useState }from 'react';
+import {useState, useEffect }from 'react';
+import Portis from '@portis/web3';
+import Web3 from 'web3';
+import { D_APP_PORTIS_ID } from '../configs/todolist';
+
+
 
 const HomePage = () => {
+    
 
     const [toggle,setToggle] = useState(1)
     const menuToggle = ['showcase active','showcase']
@@ -17,6 +23,15 @@ const HomePage = () => {
         }
        
     }
+
+    useEffect(()=>{
+         const portis = new Portis(D_APP_PORTIS_ID, 'mainnet');
+         const web3 = new Web3(portis.provider);
+
+         web3.eth.getAccounts((error, accounts) => {
+            console.log(accounts);
+          });
+    },[])
 
     return ( <div className="home-container">
         <section className={menuToggle[toggle]}>
